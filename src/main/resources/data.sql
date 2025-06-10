@@ -1,0 +1,12 @@
+INSERT INTO users (id, username, balance) VALUES (1, 'user1', 1000.00);
+INSERT INTO users (id, username, balance) VALUES (2, 'user2', 1000.00);
+INSERT INTO users (id, username, balance) VALUES (3, 'user3', 1000.00);
+INSERT INTO users (id, username, balance) VALUES (4, 'user4', 1000.00);
+INSERT INTO users (id, username, balance) VALUES (5, 'user5', 1000.00);
+INSERT INTO users (id, username, balance) VALUES (6, 'user6', 1000.00);
+INSERT INTO users (id, username, balance) VALUES (7, 'user7', 1000.00);
+INSERT INTO users (id, username, balance) VALUES (8, 'user8', 1000.00);
+INSERT INTO users (id, username, balance) VALUES (9, 'user9', 1000.00);
+INSERT INTO users (id, username, balance) VALUES (10, 'user10', 1000.00);
+INSERT INTO users (id, username, balance) VALUES (11, 'waldorf', 1000.00);
+INSERT INTO users (id, username, balance) VALUES (12, 'wilbur', 1000.00);

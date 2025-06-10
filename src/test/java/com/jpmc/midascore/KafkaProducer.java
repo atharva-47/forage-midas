@@ -17,6 +17,15 @@ public class KafkaProducer {
 
     public void send(String transactionLine) {
         String[] transactionData = transactionLine.split(", ");
-        kafkaTemplate.send(topic, new Transaction(Long.parseLong(transactionData[0]), Long.parseLong(transactionData[1]), Float.parseFloat(transactionData[2])));
+        if (transactionData.length >= 3) {
+            try {
+                Long senderId = Long.parseLong(transactionData[0]);
+                Long recipientId = Long.parseLong(transactionData[1]);
+                Float amount = Float.parseFloat(transactionData[2]);
+                kafkaTemplate.send(topic, new Transaction(senderId, recipientId, amount));
+            } catch (NumberFormatException e) {
+                System.err.println("Error parsing transaction: " + transactionLine + " - " + e.getMessage());
+            }
+        }
     }
 }

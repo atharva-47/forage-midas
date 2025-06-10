@@ -1,8 +1,16 @@
 package com.jpmc.midascore.repository;
 
-import com.jpmc.midascore.entity.UserRecord;
-import org.springframework.data.repository.CrudRepository;
+import com.jpmc.midascore.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+import java.util.Optional;
 
-public interface UserRepository extends CrudRepository<UserRecord, Long> {
-    UserRecord findById(long id);
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+    Optional<User> findByUsername(String username);
+    
+    @Query("SELECT u FROM User u WHERE u.id = :id")
+    Optional<User> findById(@Param("id") Integer id);
 }
